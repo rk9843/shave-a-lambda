@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <title>Shave A Lambda</title>
+
+</head>
+
+<!--<body>-->
+<!--    <div id="Chart">-->
+<!--        <canvas id="myChart" style="width:100%;max-width:720px"></canvas>-->
+<!--        <script>-->
+<!--            const data = JSON.parse('{{ balance_json | tojson | safe }}');-->
+<!--            var date = new Date();-->
+<!--    	    var current_time = date.getHours().toString().padStart(2, '0') + ":" + date.getMinutes().toString().padStart(2, '0') + ":" + date.getSeconds().toString().padStart(2, '0');-->
+
+<!--            const values = Object.values(data);-->
+            // const total_bands = values.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+<!--            const total_bands = values.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toFixed(2);-->
+
+<!--            const ctx = document.getElementById('myChart');-->
+
+<!--            const myChart = new Chart(ctx, {-->
+<!--                type: 'bar',-->
+<!--                data: {-->
+<!--                    labels: ["Team 1: David, Aaron, Ryan Kim", "Team 2: Josh, Kyle, Sam", "Team 3: Grant, Tyler, Ryan Xue"],-->
+<!--                    datasets: [{-->
+<!--                        label: 'Money Raised',-->
+<!--                        data: values,-->
+<!--                        backgroundColor: [-->
+<!--                            'rgba(255, 99, 132, 0.2)',-->
+<!--                            'rgba(54, 162, 235, 0.2)',-->
+<!--                            'rgba(255, 206, 86, 0.2)'-->
+<!--                        ],-->
+<!--                        borderColor: [-->
+<!--                            'rgba(255, 99, 132, 1)',-->
+<!--                            'rgba(54, 162, 235, 1)',-->
+<!--                            'rgba(255, 206, 86, 1)'-->
+<!--                        ],-->
+<!--                        borderWidth: 1-->
+<!--                    }]-->
+<!--                },-->
+<!--                options: {-->
+<!--                    scales: {-->
+<!--                        y: {-->
+<!--                            beginAtZero: true-->
+<!--                        }-->
+<!--                    },-->
+<!--                    plugins: {-->
+<!--                        title: {-->
+<!--                            display: true,-->
+<!--                            text: [-->
+<!--                                'Lambda Phi Epsilon Shave-A-Lambda',-->
+<!--                                `Total money raised: $${total_bands}`,-->
+<!--                                `Last updated: ${current_time}`-->
+<!--                            ]-->
+<!--                        },-->
+<!--                        datalabels: {-->
+<!--                            align: 'end',-->
+<!--                            anchor: 'end',-->
+<!--                            formatter: function(value, context) {-->
+                                return `$${value.toFixed(2)}`; // Updated to format values to 2 decimal places
+<!--                            }-->
+<!--                        }-->
+<!--                    },-->
+<!--                    responsive: true,-->
+<!--                    maintainAspectRatio: false-->
+<!--                },-->
+                plugins: [ChartDataLabels] // Ensure you enable the plugin here
+<!--            });-->
+<!--        </script>-->
+<!--    </div>-->
+
+
+<!--    <div id="Top3" style="max-width:240px; padding-top:20px;">-->
+<!--        <table id="donorsTable" style="border-collapse: collapse; width:100%; border: none;">-->
+<!--            <caption style="font-weight: bold;">Top Donors</caption>-->
+<!--            <tbody></tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        try {-->
+<!--            const data = JSON.parse('{{ top3_json | tojson | safe }}');-->
+<!--            const tableBody = document.querySelector("#donorsTable tbody");-->
+
+<!--            let rowsHTML = "";-->
+<!--            Object.values(data).forEach((donor, index) => {-->
+<!--                rowsHTML += `<tr>-->
+<!--                                  <td style="border: none;">#${index + 1}</td>-->
+<!--                                  <td style="border: none;">${donor[0]}</td>-->
+<!--                                  <td style="border: none;">$${donor[1]}</td>-->
+<!--                              </tr>`;-->
+<!--            });-->
+
+<!--            tableBody.innerHTML = rowsHTML;-->
+<!--        } catch (error) {-->
+<!--            console.error("Error parsing JSON data or rendering donors:", error);-->
+<!--            document.querySelector("#donorsTable tbody").innerHTML = "<tr><td colspan='3' style='border: none;'>Error loading donor data.</td></tr>";-->
+<!--        }-->
+<!--    </script>-->
+
+    <div id="Info">
+        <h1>What is NMDP?</h1>
+        <p>
+            NMDP or <a href="https://bethematch.org/about-us/" target="_blank">National Marrow Donor Program</a> (formerly known as Be The Match)  is a nonprofit organization that’s dedicated to helping every patient get the life-saving transplant they need.
+        </p>
+        <p>
+            At Lambda Phi Epsilon, in honor of fallen brother Evan Chen, each chapter works tirelessly to fundraise and raise awareness especially for Asians and other racial minorities to register as donors. Since the fraternity’s inception, Lambda Phi Epsilon has educated thousands of donors to commit to saving the life of a patient in need.
+        </p>
+        <h1>What can I do?</h1>
+        <p>
+            The brothers at Rochester Institute of Technology hold "Shave-A-Lambda" every year where the team who raises the most money gets shaved.
+        </p>
+        <p>
+            You can donate through <a href="https://venmo.com/" target="_blank">Venmo</a> to Ryan-Kim-126 and see the numbers go up! In the comment, make sure to include which Team (1, 2, or 3) you are rooting for!
+        </p>
+        <p>
+            Additionally, the brothers will host info sessions and other fundraisers so make sure you are following us on instagram @<a href="https://www.instagram.com/ritlambdas/" target="_blank">RITLambdas</a> to stay up to date.
+        </p>
+    </div>
+        <p style="color:white;">I love you smita</p>
+</body>
+</html>
